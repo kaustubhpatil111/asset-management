@@ -1,0 +1,646 @@
+/* Premium Theme with Orange Base (#FF9100) */
+
+/* Colors and Fonts */
+:root {
+  --color-primary: #FF9100; /* User's preferred orange */
+  --color-secondary: #ffffff; /* Clean white */
+  --color-background: linear-gradient(to bottom right, #f8f8f8, #eeeeee); /* Soft neutral gradient */
+  --color-container-bg: rgba(255, 255, 255, 0.35); /* Glass effect */
+  --color-input-bg: rgba(255, 255, 255, 0.55); /* Softer input backgrounds */
+  --color-text: #1d1d1d; /* Deep charcoal for contrast */
+  --color-placeholder: rgba(51, 51, 51, 0.5); /* Subtle placeholder text */
+  --font-primary: "Segoe UI", sans-serif; /* Clean, modern font */
+  --font-secondary: "Arial", sans-serif;
+  --box-shadow-light: 0 15px 25px rgba(0, 0, 0, 0.1); /* Light shadow for elegance */
+  --box-shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.2); /* Hover effect with depth */
+  --border-radius: 16px; /* Rounded corners */
+  --transition-speed: 0.4s; /* Smooth transitions */
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--color-background);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  margin-top: 100px;
+  padding: 50px;
+}
+
+.hero h1 {
+  font-size: clamp(4rem, 7vw, 5rem); /* Large, bold heading */
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--color-text);
+  margin-bottom: 50px;
+}
+
+/* Auth Container - Glassmorphism */
+#authContainer {
+  width: 100%;
+  max-width: 450px;
+  padding: 60px;
+  background: var(--color-container-bg);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(25px); /* Glassmorphism effect */
+  box-shadow: var(--box-shadow-light);
+  text-align: center;
+  transition: all var(--transition-speed) ease;
+}
+
+#authContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+#authContainer h2 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Input Groups */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 16px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  transition: background var(--transition-speed), box-shadow var(--transition-speed);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.input-group i {
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  margin-right: 10px;
+}
+
+.input-group input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  padding: 8px;
+}
+
+.input-group:hover {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 18px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-speed), box-shadow var(--transition-speed);
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background: #e67e00; /* Richer orange for hover */
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Asset Management - Glass Effect */
+#assetManagement {
+  width: 100%;
+  max-width: 1000px;
+
+  background: var(--color-container-bg);
+  padding: 50px;
+  border-radius: var(--border-radius);
+  margin-top: 50px;
+  box-shadow: var(--box-shadow-light);
+  transition: all var(--transition-speed);
+}
+
+#assetManagement:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+#assetManagement h2 {
+  font-size: 2.8rem;
+  color: var(--color-primary);
+  margin-bottom: 30px;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+th, td {
+  padding: 18px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+thead th {
+  background: var(--color-primary);
+  color: white;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+tbody tr {
+  background: rgba(255, 255, 255, 0.1);
+  transition: background var(--transition-speed);
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Search Bar */
+#searchBar {
+  width: 100%;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+#searchBar:hover {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styling */
+#editAssetModal {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-light);
+  width: 90%;
+  max-width: 500px;
+}
+
+#editAssetModal button:first-of-type {
+  background-color: var(--color-primary);
+}
+
+#editAssetModal button:last-of-type {
+  background-color: #ff3b30; /* Premium red for cancel */
+}
+/* Premium Category Section and Add Asset Form */
+
+/* Category Selection */
+.category {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent for glass effect */
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  width: 150px;
+  margin: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.category:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.category i {
+  font-size: 3rem;
+  color: var(--color-primary); /* Base color for icons */
+  margin-bottom: 15px;
+  transition: color 0.3s;
+}
+
+.category:hover i {
+  color: #d97a00; /* Slightly darker orange on hover */
+}
+
+.category span {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.category:hover span {
+  color: var(--color-primary);
+}
+
+/* Add New Asset Form */
+#addAssetModal {
+  background: rgba(255, 255, 255, 0.85); /* Glassmorphism effect */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  transition: all 0.3s ease;
+}
+
+#addAssetModal h2 {
+  color: var(--color-primary);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: background var(--transition-speed), box-shadow var(--transition-speed);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.input-group label {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.input-group input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.input-group input:focus {
+  border-bottom: 2px solid var(--color-primary);
+  background: rgba(255, 255, 255, 0.6); /* Softer background on focus */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input-group:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Date Picker Styling */
+input[type="date"] {
+  font-family: var(--font-primary);
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--color-text);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type="date"]:focus {
+  border-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons in Modal */
+#addAssetModal button {
+  width: 100%;
+  padding: 16px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-speed), box-shadow var(--transition-speed);
+  margin-top: 20px;
+}
+
+#addAssetModal button:hover {
+  background: #d97a00;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Feedback Message */
+#modalFeedback {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-top: 20px;
+}
+
+/* Asset List Search Bar */
+#searchBar {
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  outline: none;
+  transition: background var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+#searchBar:focus {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Table - Premium Look */
+table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+}
+
+thead th {
+  background: var(--color-primary);
+  color: white;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+tbody tr {
+  transition: background var(--transition-speed);
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design for Categories */
+@media screen and (max-width: 768px) {
+  .category {
+    width: 100%;
+  }
+
+  #assetManagement ul {
+    flex-direction: column;
+  }
+}
+
+/* Centered Add New Asset Form within Parent Container */
+
+#addAssetModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  background: rgba(255, 255, 255, 0.85); /* Glassmorphism effect */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Light shadow for premium look */
+  width: 90%;
+  max-width: 600px; /* Maximum width */
+  margin: 0 auto; /* Center horizontally */
+  text-align: center; /* Center the text and form elements */
+  transition: all 0.3s ease;
+}
+
+/* Center the Modal Container in its Parent */
+#assetManagement {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  height: 100%; /* Full height of the parent container */
+  width: 100%;
+}
+
+/* Modal Heading */
+#addAssetModal h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 30px;
+}
+
+/* Input Group Styling */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.55); /* Softer glass background */
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle border */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.input-group input {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  transition: border-bottom 0.3s ease, background 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.input-group input:focus {
+  border-bottom: 2px solid var(--color-primary);
+  background: rgba(255, 255, 255, 0.65); /* Soft focus background */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Slight glow on focus */
+}
+
+/* Date Picker Styling */
+input[type="date"] {
+  font-family: var(--font-primary);
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--color-text);
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+input[type="date"]:focus {
+  border-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Buttons */
+#addAssetModal button {
+  width: 48%;
+  padding: 16px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-speed), box-shadow var(--transition-speed);
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+#addAssetModal button:hover {
+  background: #d97a00;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#addAssetModal button:last-of-type {
+  background-color: #ff3b30;
+}
+
+#addAssetModal button:last-of-type:hover {
+  background-color: #d12a21;
+}
+
+/* Button Container */
+#addAssetModal .button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Modal Feedback (Optional) */
+#modalFeedback {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-top: 20px;
+}
+
+/* Adjustments for Smaller Screens */
+@media screen and (max-width: 768px) {
+  #addAssetModal {
+    padding: 30px;
+  }
+
+  #addAssetModal button {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  #addAssetModal .button-container {
+    flex-direction: column;
+  }
+}
+/* Category Selection */
+.category {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent for glass effect */
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  width: 150px; /* Fixed width to ensure consistency */
+  height: 150px; /* Fixed height to keep icons and text contained */
+  margin: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden; /* Ensure no content spills outside */
+}
+
+.category i {
+  font-size: 3rem; /* Adjust icon size */
+  color: var(--color-primary); /* Base color for icons */
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+  display: inline-block;
+  max-width: 100%; /* Ensure icon doesn't overflow */
+  max-height: 80px; /* Constrain icon height */
+}
+
+.category:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.category span {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.category:hover span {
+  color: var(--color-primary);
+}

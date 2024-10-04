@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asset Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-overlay"></div>
+    <div class="hero">
+      <h1>Keep Track of Everything...</h1>
+      <h2>MY ASSETS</h2>
+    </div>
+
+    <div id="authContainer">
+      <div id="signInForm">
+        <h2>Login</h2>
+        <form id="signin">
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input
+              type="text"
+              id="signinUsername"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input
+              type="password"
+              id="signinPassword"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </button>
+        </form>
+        <p>
+          Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a>
+        </p>
+      </div>
+
+      <div id="signUpForm" style="display: none">
+        <h2>Create Account</h2>
+        <form id="signup">
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input
+              type="text"
+              id="signupUsername"
+              placeholder="Enter Your Username"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input
+              type="email"
+              id="signupEmail"
+              placeholder="Enter Your Email"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-phone"></i>
+            <input
+              type="text"
+              id="signupPhone"
+              placeholder="Enter Your Phone No."
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input
+              type="password"
+              id="signupPassword"
+              placeholder="Enter Your Password"
+              required
+            />
+          </div>
+          <button type="submit">
+            <i class="fas fa-user-plus"></i> Sign Up
+          </button>
+        </form>
+        <p>
+          Already have an account? <a href="#" onclick="showSignIn()">Login</a>
+        </p>
+        <button class="google-login">
+          <i class="fab fa-google"></i> Login with Google
+        </button>
+      </div>
+    </div>
+
+    <div id="assetManagement" style="display: none">
+      <h2>Select a Category</h2>
+      <div class="asset-categories">
+        <div class="category" onclick="showAssets('laptop')">
+          <i class="fas fa-laptop"></i>
+          <span>Laptops</span>
+        </div>
+        <div class="category" onclick="showAssets('computer')">
+          <i class="fas fa-desktop"></i>
+          <span>Computers</span>
+        </div>
+        <div class="category" onclick="showAssets('printer')">
+          <i class="fas fa-print"></i>
+          <span>Printers</span>
+        </div>
+        <div class="category" onclick="showAssets('projector')">
+          <i class="fas fa-video"></i>
+          <span>Projectors</span>
+        </div>
+        <div class="category" onclick="showAssets('keyboard')">
+          <i class="fas fa-keyboard"></i>
+          <span>Keyboards</span>
+        </div>
+        <div class="category" onclick="showAssets('speaker')">
+          <i class="fas fa-volume-up"></i>
+          <span>Speakers</span>
+        </div>
+        <div class="category" onclick="showAssets('headphone')">
+          <i class="fas fa-headphones"></i>
+          <span>Headphones</span>
+        </div>
+        <div class="category" onclick="showAssets('webcam')">
+          <i class="fas fa-camera"></i>
+          <span>Webcams</span>
+        </div>
+        <div class="category" onclick="showAssets('mouse')">
+          <i class="fas fa-mouse"></i>
+          <span>Mouse</span>
+        </div>
+      </div>
+
+      <div id="addAssetModal" style="display: none">
+        <h2 id="modalTitle">Add New Asset</h2>
+        <form id="addAssetForm">
+          <input type="hidden" id="addAssetCategory" name="category" />
+          <div class="input-group">
+            <label for="assetName">Asset Name</label>
+            <input type="text" id="assetName" required />
+          </div>
+          <div class="input-group">
+            <label for="assetOwner">Owner</label>
+            <input type="text" id="assetOwner" required />
+          </div>
+          <div class="input-group">
+            <label for="assetMac">MAC Address</label>
+            <input type="text" id="assetMac" required />
+          </div>
+          <div class="input-group">
+            <label for="assetAssignDate">Assign Date</label>
+            <input type="date" id="assetAssignDate" required />
+          </div>
+          <div class="input-group">
+            <label for="assetReturnDate">Return Date</label>
+            <input type="date" id="assetReturnDate" />
+          </div>
+          <button type="submit">Add Asset</button>
+          <button type="button" id="closeAddAssetModal">Close</button>
+        </form>
+        <div id="modalFeedback" style="display: none"></div>
+      </div>
+
+      <div id="assetList" style="display: none">
+        <h2 id="assetCategoryTitle"></h2>
+        <input type="text" id="searchBar" placeholder="Search assets by name" />
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Owner</th>
+              <th>MAC Address</th>
+              <th>Assign Date</th>
+              <th>Return Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="assetTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
